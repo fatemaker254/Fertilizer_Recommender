@@ -5,37 +5,49 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
 </head>
 <body>
-    <h1>Fertilizer Recommendation System</h1>
+    <div class="container">
+    <h1 class="form-title">Fertilizer Recommendation System</h1>
     <form method="post">
-        <label for="temperature">Temperature:</label>
-        <input type="text" id="temperature" name="temperature"><br><br>
-
+        <div class="main-user-info">
+            <div class="user-input-box">
+              <label for="temperature">Temperature:</label>
+              <input type="text" id="temperature" name="temperature" placeholder="Enter the Temperature" >
+            </div>
+        <div class="user-input-box">
         <label for="humidity">Humidity:</label>
-        <input type="text" id="humidity" name="humidity"><br><br>
-
+        <input type="text" id="humidity" name="humidity" placeholder="Enter the Humidity">
+        </div>
+        <div class="user-input-box">
         <label for="moisture">Moisture:</label>
-        <input type="text" id="moisture" name="moisture"><br><br>
-
+        <input type="text" id="moisture" name="moisture" placeholder="Enter the Moisture">
+        </div>
+        <div class="user-input-box">
         <label for="nitrogen">Nitrogen:</label>
-        <input type="text" id="nitrogen" name="nitrogen"><br><br>
-
+        <input type="text" id="nitrogen" name="nitrogen" placeholder="Enter the Nitrogen">
+        </div>
+        <div class="user-input-box">
         <label for="potassium">Potassium:</label>
-        <input type="text" id="potassium" name="potassium"><br><br>
-
+        <input type="text" id="potassium" name="potassium" placeholder="Enter the Potassium">
+        </div>
+        <div class="user-input-box">
         <label for="phosphorous">Phosphorous:</label>
-        <input type="text" id="phosphorous" name="phosphorous"><br><br>
-
+        <input type="text" id="phosphorous" name="phosphorous" placeholder="Enter the Phosphorous">
+        </div>
+        <div class="user-input-box">
         <label for="soil_type">Soil Type:</label>
-        <select id="soil_type" name="soil_type">
+        <select id="soil_type" name="soil_type" class="select-input">
+            <option>--Select Choice--</option>
             <option value="Loamy">Loamy</option>
             <option value="Sandy">Sandy</option>
             <option value="Clayey">Clayey</option>
             <option value="Black">Black</option>
             <option value="Red">Red</option>
-        </select><br><br>
-
+        </select>
+        </div>
+        <div class="user-input-box">
         <label for="crop_type">Crop Type:</label>
-        <select id="crop_type" name="crop_type">
+        <select id="crop_type" name="crop_type" class="select-input">
+            <option>--Select Choice--</option>
             <option value="Sugarcane">Sugarcane</option>
             <option value="Cotton">Cotton</option>
             <option value="Millets">Millets</option>
@@ -47,10 +59,12 @@
             <option value="Oil seeds">Oil seeds</option>
             <option value="Ground Nuts">Ground Nuts</option>
             <option value="Maize">Maize</option>
-        </select><br><br>
-
-        <input type="submit" value="Predict">
+        </select>
+        </div>
+        </div>
+        <div class="form-submit-btn"><input type="submit" value="Predict"></div>
     </form>
+    </div>
 
     {% if show_result %}
         <h2>Predicted Fertilizer: {{ prediction }}</h2>
