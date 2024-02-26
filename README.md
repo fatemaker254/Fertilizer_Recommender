@@ -13,7 +13,7 @@ Activate the environment
 ## step3
 Download the packages
 
-```pip install pandas scikit-learn joblib  flask pickle```
+``` pip install pandas scikit-learn joblib  flask numpy pickle ```
 
 ## step4
 Run the model to make the pickle files 
