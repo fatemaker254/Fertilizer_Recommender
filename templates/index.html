@@ -65,9 +65,14 @@
         <div class="form-submit-btn"><input type="submit" value="Predict"></div>
     </form>
     </div>
-
     {% if show_result %}
-        <h2>Predicted Fertilizer: {{ prediction }}</h2>
+    <h2>Predicted Fertilizers:</h2>
+    <p>
+    {% for item in prediction %}
+        <b>{{ item }}</b>{% if not loop.last %}, {% endif %}
+    {% endfor %}
+    </p>
     {% endif %}
+    
 </body>
 </html>
