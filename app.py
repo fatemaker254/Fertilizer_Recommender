@@ -57,28 +57,14 @@ def index():
                 ]
             ]
         )
-        # prediction = model.predict(features).reshape(1, -1)[0]
-        """
-        top_5_indices = np.argsort(prediction)[::-1][
-            :5
-        ]  # Get indices of top 5 predictions
+        predictions = model.predict_proba(features)[
+            0
+        ]  # Get the probability distribution
+        top_indices = np.argsort(predictions)[::-1][:5]  # Get top 5 indices
         top_5_fertilizers = [
-            model.classes_[i] for i in top_5_indices
+            model.classes_[i] for i in top_indices
         ]  # Get names of top 5 fertilizers
 
-        return render_template(
-            "index.html", predictions=top_5_fertilizers, show_result=True
-        )"""
-        predictions = model.predict(features)
-        top_5_indices = np.argsort(predictions)[::-1][
-            :5
-        ]  # Get indices of top 5 predictions
-        top_5_fertilizers = [
-            model.classes_[i] for i in top_5_indices
-        ]  # Get names of top 5 fertilizers
-        print(top_5_fertilizers)
-        print(predictions)
-        print(top_5_indices)
         return render_template(
             "index.html", prediction=top_5_fertilizers, show_result=True
         )

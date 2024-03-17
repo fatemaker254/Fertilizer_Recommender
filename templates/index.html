@@ -66,13 +66,16 @@
     </form>
     </div>
     {% if show_result %}
-    <h2>Predicted Fertilizers:</h2>
-    <p>
-    {% for item in prediction %}
-        <b>{{ item }}</b>{% if not loop.last %}, {% endif %}
-    {% endfor %}
-    </p>
-    {% endif %}
     
+    <div style="margin-top: 10px;">
+        <ul>
+        <h1><u>Predicted Fertilizers<u></h1>
+        {% for item in prediction %}
+            <li><b>{{ item }}<b></li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
 </body>
 </html>
